@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinay Hosamane K N - Staff iOS Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .header .title {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .main-content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #667eea;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #764ba2;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .experience-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .duration {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-description {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 0.8rem;
+        }
+
+        .achievements li strong {
+            color: #333;
+        }
+
+        .education-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .degree {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .year {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .cert-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .cert-item h4 {
+            color: #667eea;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .cert-item p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .achievement-item {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #667eea30;
+        }
+
+        .achievement-item h4 {
+            color: #333;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .achievement-item p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Vinay Hosamane K N</h1>
+            <div class="title">Staff iOS Engineer</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    vinayhosamane07@gmail.com
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    8861112848
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                    LinkedIn Profile
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Bangalore, Karnataka, India
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="summary">
+                    Senior iOS Engineer with 7+ years of experience architecting and delivering scalable mobile solutions for enterprise and consumer applications. Proven track record of leading cross-platform development initiatives at scale, with expertise in Swift, iOS architecture patterns, and performance optimization. Successfully delivered features serving millions of users at Walmart Global Tech, including predictive commerce solutions and personalized user experiences. Demonstrated ability to drive technical innovation, mentor teams, and collaborate across functions to deliver high-impact mobile solutions.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Core Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>iOS Development</h4>
+                        <p>Swift, Objective-C, SwiftUI, UIKit, iOS SDK</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Architecture & Design</h4>
+                        <p>MVVM, MVC, Design Patterns, Cross-platform Solutions</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Backend Integration</h4>
+                        <p>GraphQL, REST APIs, Schema Migration</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Performance & Quality</h4>
+                        <p>Code Coverage Optimization, Performance Monitoring, Automated Testing</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps & Monitoring</h4>
+                        <p>Splunk, Grafana, Operational Dashboards</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Enterprise Frameworks</h4>
+                        <p>SAP Fiori UI, Analytics Integration, Localization (ICU Format)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior Software Engineer</div>
+                            <div class="company">Walmart Global Tech India</div>
+                        </div>
+                        <div class="duration">Nov 2023 - Present</div>
+                    </div>
+                    <div class="job-description">Leading iOS development for large-scale e-commerce platform serving millions of users</div>
+                    <ul class="achievements">
+                        <li><strong>Technical Leadership:</strong> Spearheaded cross-platform feature development, driving architectural decisions and implementation strategies across multiple teams</li>
+                        <li><strong>Performance Optimization:</strong> Executed schema migration initiative resulting in 30% reduction in app code size and improved performance metrics</li>
+                        <li><strong>User Experience Innovation:</strong> Designed and implemented personalized carousels leveraging user order patterns, significantly enhancing user engagement and conversion rates</li>
+                        <li><strong>Process Automation:</strong> Developed innovative solutions to automate repetitive development tasks, improving team productivity and reducing delivery timelines</li>
+                        <li><strong>Strategic Impact:</strong> Contributed to key e-commerce initiatives including Predictive Basket, Personalized carousels, and benefit pages enablement features</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Software Engineer 3</div>
+                            <div class="company">Walmart Global Tech India</div>
+                        </div>
+                        <div class="duration">Oct 2021 - Nov 2023</div>
+                    </div>
+                    <div class="job-description">Delivered critical user-facing features and infrastructure improvements</div>
+                    <ul class="achievements">
+                        <li><strong>Product Innovation:</strong> Architected and developed the Predictive Basket feature, enabling intelligent product recommendations and streamlined user checkout experience</li>
+                        <li><strong>Internationalization:</strong> Led migration to new ICU localization format, expanding global market reach and improving international user engagement</li>
+                        <li><strong>System Reliability:</strong> Implemented comprehensive monitoring using Splunk and Grafana dashboards, ensuring 99.9% system uptime and proactive issue resolution</li>
+                        <li><strong>Code Quality:</strong> Drove code coverage improvements across multiple modules, establishing testing standards that enhanced codebase maintainability and reliability</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Mobile Developer</div>
+                            <div class="company">SAP Labs India</div>
+                        </div>
+                        <div class="duration">Oct 2018 - Oct 2021</div>
+                    </div>
+                    <div class="job-description">Developed enterprise analytics solutions for SAP's mobile platform</div>
+                    <ul class="achievements">
+                        <li><strong>Enterprise Application Development:</strong> Enhanced SAP Analytics Cloud iOS application with advanced user interaction tracking and analytics capabilities</li>
+                        <li><strong>UI/UX Leadership:</strong> Completely revamped app settings architecture using SAP Fiori UI library, improving user experience and establishing reusable component patterns</li>
+                        <li><strong>QA Innovation:</strong> Created standalone automation runner tool, streamlining QA processes and increasing testing efficiency by 40%</li>
+                        <li><strong>Cross-functional Collaboration:</strong> Worked closely with product, design, and backend teams to deliver integrated mobile solutions</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Consultant</div>
+                            <div class="company">Allstate India</div>
+                        </div>
+                        <div class="duration">Oct 2017 - Sep 2018</div>
+                    </div>
+                    <div class="job-description">Delivered insurance technology solutions for automotive risk assessment</div>
+                    <ul class="achievements">
+                        <li><strong>Product Development:</strong> Contributed to Drivewise application development, implementing driver performance tracking and risk assessment features for auto insurance platform</li>
+                        <li><strong>Dashboard Integration:</strong> Developed and integrated new dashboard features within Allstate's master application, improving user experience and operational efficiency</li>
+                        <li><strong>Recognition:</strong> Awarded 'Standing Ovation' for exceptional contributions that significantly impacted project outcomes and user satisfaction</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Associate Consultant</div>
+                            <div class="company">Allstate India</div>
+                        </div>
+                        <div class="duration">Aug 2015 - Oct 2017</div>
+                    </div>
+                    <div class="job-description">Developed B2B and B2C mobile applications for roadside services</div>
+                    <ul class="achievements">
+                        <li><strong>Application Development:</strong> Built and integrated new functionalities into B2B and B2C applications for Allstate Roadside Services, serving thousands of daily users</li>
+                        <li><strong>Technical Leadership:</strong> Co-organized 'Tech Talk' sessions on mobile development trends, fostering knowledge sharing and continuous learning culture</li>
+                        <li><strong>Innovation Recognition:</strong> Recognized as 'Star Of The Month' for outstanding contributions and innovative problem-solving approaches</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Engineering, Computer Science</div>
+                    <div class="institution">The National Institute Of Engineering, Mysore</div>
+                    <div class="year">2011 - 2015</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <h4>CutShort Certified</h4>
+                        <p>Swift - Basic</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Awards & Recognition</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <h4>Employee of the Month</h4>
+                        <p>Multiple recognitions</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h4>Aawishkaar Award</h4>
+                        <p>Innovation Excellence</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h4>Bravo Award</h4>
+                        <p>Outstanding Performance</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h4>Standing Ovation</h4>
+                        <p>Exceptional Contributions (Aug 2017)</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h4>Star Of The Month</h4>
+                        <p>Technical Leadership (Mar 2017)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Key Achievements</h2>
+                <ul class="achievements">
+                    <li>Led development of features serving millions of users in global e-commerce platform</li>
+                    <li>Achieved 30% code size reduction through strategic schema migration</li>
+                    <li>Improved team productivity through automation and process optimization</li>
+                    <li>Established testing standards that enhanced codebase maintainability</li>
+                    <li>Contributed to international market expansion through localization initiatives</li>
+                    <li>Published research on "LanLink Text and Voice Communication over Wired LAN"</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
